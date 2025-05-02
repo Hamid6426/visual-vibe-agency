@@ -6,10 +6,11 @@ import Footer from "../components/Footer";
 import Services from "../components/Services";
 import Testimonial from "../components/Testimonial";
 import Projects from "../components/Projects";
+import AnimatedText from "../components/AnimatedText";
 
 function Homepage() {
   return (
-    <main className="">
+    <main className="flex flex-col w-full justify-between items-center">
       <Header />
       <Hero />
       <Services />

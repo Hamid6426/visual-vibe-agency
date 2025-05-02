@@ -53,18 +53,18 @@ const testimonials = [
 
 export default function Testimonial() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden -z-10">
       <div className="flex animate-scroll-left my-12">
-        {testimonials.map((t) => (
-          <div key={t.id} className="border-l flex flex-row bg-white pl-6 w-full">
+        {[...testimonials, ...testimonials].map((t, i) => (
+          <div key={i} className=" flex border-l bg-white pl-6 w-full">
             <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="currentColor" viewBox="0 0 96 96">
               <text x="0" y="64" font-size="96" font-family="serif">
                 “
               </text>
             </svg>
-            <div className="flex flex-col justify-between gap-8 bg-white pr-6 min-w-[28rem] w-full">
-              <p className="text-4xl font-semibold">{t.headline}</p>
-              <p className="text-gray-600 text-justify max-w-[24rem]">{t.description}</p>
+            <div className="flex flex-col justify-between gap-8 bg-white pr-6 min-w-[22rem] sm:min-w-[28rem] w-full">
+              <p className="text-2xl sm:text-4xl font-semibold  max-w-[20rem] sm:max-w-[24rem]">{t.headline}</p>
+              <p className="text-gray-600 text-justify max-w-[20rem] sm:max-w-[24rem]">{t.description}</p>
               <div className="flex items-center gap-4">
                 <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full object-cover" />
                 <div>

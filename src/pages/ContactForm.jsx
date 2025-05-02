@@ -28,6 +28,7 @@ export default function ContactForm() {
       <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="Email" required />
       <textarea name="message" value={form.message} onChange={handleChange} placeholder="Message" required />
       <button type="submit">Send</button>
+    
     </form>
   );
 }

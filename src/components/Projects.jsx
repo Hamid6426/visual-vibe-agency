@@ -18,20 +18,20 @@ const projects = [
 
 export default function Projects() {
   return (
-    <main className="w-full px-12 flex justify-center py-8 h-screen">
+    <main className="w-full px-3 sm:px-12 flex justify-center py-8 h-fit sm:h-screen">
       <div className="flex flex-col justify-center gap-12 w-full">
         {/* Header */}
-        <section className="flex justify-between w-full">
-          <div className="text-6xl font-medium">Projects</div>
-          <div className="max-w-sm w-full text-gray-600">Check out some of our fantastic works and leverage our services for your brand</div>
+        <section className="flex flex-col gap-6 sm:gap-0 sm:flex-row sm:justify-between w-full">
+          <div className="text-4xl sm:text-6xl font-medium">Projects</div>
+          <div className="max-w-sm w-full lg:text-lg text-gray-600">Check out some of our fantastic works and leverage our services for your brand</div>
         </section>
 
         {/* Project Cards */}
         <section>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project) => (
-              <div key={project.id} className="bg-white rounded shadow-md overflow-hidden flex flex-col">
-                <img src={project.image} alt={project.title} className="w-full h-64 object-cover" />
+              <div key={project.id} className="rounded overflow-hidden flex flex-col bg-white shadow-md">
+                <img src={project.image} alt={project.title} className="w-full h-64 object-cover border border-[#E1E1E1] rounded-t-xl rounded-bl-none rounded-br-none" />
                 <div className="p-6 flex flex-col gap-4">
                   <h3 className="text-2xl font-semibold">{project.title}</h3>
                   <p className="text-gray-600">{project.description}</p>
