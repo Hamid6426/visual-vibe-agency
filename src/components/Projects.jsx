@@ -1,47 +1,80 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const projects = [
   {
     id: 1,
     title: "E-commerce Redesign",
     description: "A modern online store experience with seamless UI/UX and custom checkout flow.",
-    image: "/project1.jpg",
+    image: "/project-1.png",
   },
   {
     id: 2,
     title: "Startup Landing Page",
     description: "Crafted a responsive landing page for a tech startup to increase sign-ups.",
-    image: "/project2.jpg",
+    image: "/project-1.png",
   },
   // Add more projects as needed
 ];
 
 export default function Projects() {
-  return (
-    <main className="w-full px-3 sm:px-12 flex justify-center py-8 h-fit sm:h-screen">
-      <div className="flex flex-col justify-center gap-12 w-full">
-        {/* Header */}
-        <section className="flex flex-col gap-6 sm:gap-0 sm:flex-row sm:justify-between w-full">
-          <div className="text-4xl sm:text-6xl font-medium">Projects</div>
-          <div className="max-w-sm w-full lg:text-lg text-gray-600">Check out some of our fantastic works and leverage our services for your brand</div>
-        </section>
+  const fadeUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
 
-        {/* Project Cards */}
-        <section>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <div key={project.id} className="rounded overflow-hidden flex flex-col bg-white shadow-md">
-                <img src={project.image} alt={project.title} className="w-full h-64 object-cover border border-[#E1E1E1] rounded-t-xl rounded-bl-none rounded-br-none" />
+  return (
+    <main className="mx-auto w-full max-w-6xl px-3 sm:px-12 py-8 lg:pb-24 transition-colors duration-300">
+      {/* Header */}
+      <section className="flex flex-col gap-6 sm:flex-row sm:justify-between w-full mb-12">
+        <h2 className="text-4xl sm:text-6xl font-medium text-gray-900 dark:text-[#E1E1E1]">
+          Projects
+        </h2>
+        <p className="max-w-sm w-full lg:text-lg text-gray-600 dark:text-gray-400">
+          Check out some of our fantastic works and leverage our services for your brand
+        </p>
+      </section>
+
+      {/* Project Cards */}
+      <section>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => {
+            const ref = useRef(null);
+            const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+            return (
+              <motion.div
+                key={project.id}
+                ref={ref}
+                className="rounded overflow-hidden flex flex-col bg-white dark:bg-[#1B1B1B] border border-[#E1E1E1] dark:border-gray-700 shadow-md dark:shadow-lg transition-colors duration-300"
+                variants={fadeUp}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full aspect-video object-cover"
+                />
                 <div className="p-6 flex flex-col gap-4">
-                  <h3 className="text-2xl font-semibold">{project.title}</h3>
-                  <p className="text-gray-600">{project.description}</p>
+                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    {project.description}
+                  </p>
                 </div>
-              </div>
-            ))}
-            <button className="mt-4 px-4 py-2 bg-black text-white w-max rounded hover:bg-gray-800 transition">Check out more</button>
-          </div>
-        </section>
-      </div>
+              </motion.div>
+            );
+          })}
+
+          {/* Button */}
+          <a href="/projects" className="text-center mt-4 px-4 py-2 inline-block max-w-sm rounded-full bg-black text-white dark:bg-[#E1E1E1] dark:text-[#1B1B1B] hover:opacity-90 transition-all duration-200">
+            Check out more
+          </a>
+        </div>
+      </section>
     </main>
   );
 }

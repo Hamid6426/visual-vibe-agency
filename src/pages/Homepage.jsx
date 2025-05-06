@@ -10,7 +10,7 @@ import AnimatedText from "../components/AnimatedText";
 
 function Homepage() {
   return (
-    <main className="flex flex-col w-full justify-between items-center">
+    <main className="bg-white dark:bg-[#141414]">
       <Header />
       <Hero />
       <Services />

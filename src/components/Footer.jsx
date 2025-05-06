@@ -6,39 +6,34 @@ import ThemeDropdown from "./ThemeDropdown";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#f3f3f3] flex flex-col gap-8 justify-center items-center py-10">
-      <section className=" flex justify-end items-end">
-        <div className="font-bold text-[#141414] text-3xl md:text-5xl">Visual Vibe</div>
-        <div className="text-lg translate-y-1 ml-1">®</div>
+    <footer className="w-full bg-[#f3f3f3] dark:bg-[#000000] flex flex-col gap-8 justify-center items-center py-10 transition-colors duration-300">
+      <section className="flex justify-end items-end">
+        <div className="font-bold text-[#141414] dark:text-[#E1E1E1] text-3xl md:text-5xl">Visual Vibe</div>
+        <div className="text-lg translate-y-1 ml-1 dark:text-[#E1E1E1]">®</div>
       </section>
+
       <section className="flex gap-6 justify-center font-semibold flex-wrap">
-        <Link to="/contact">Contact</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/contact">Contact</Link>
+        {["Contact", "Contact", "Contact", "Contact"].map((label, i) => (
+          <Link key={i} to="/contact" className="text-[#141414] dark:text-[#E1E1E1] transition-colors duration-200">
+            {label}
+          </Link>
+        ))}
       </section>
+
       <section className="flex gap-6 flex-col md:flex-row justify-center items-center">
         <div className="flex gap-6 flex-wrap w-full justify-center items-center">
-          <div className="flex gap-6">
-          <a href="/">
-            <FaFacebookF className="bg-[#fff] border p-3 w-12 h-12 rounded-full" />
-          </a>
-          <a href="/">
-            <FaInstagram className="bg-[#fff] border p-3 w-12 h-12 rounded-full" />
-          </a>
-          </div>
-          <div className="flex gap-6">
-          <a href="/">
-            <FaTwitter className="bg-[#fff] border p-3 w-12 h-12 rounded-full" />
-          </a>
-          <a href="/">
-            <MdMailOutline className="bg-[#fff] border p-3 w-12 h-12 rounded-full" />
-          </a>
-          </div>
+          {[FaFacebookF, FaInstagram, FaTwitter, MdMailOutline].map((Icon, i) => (
+            <a href="/" key={i}>
+              <Icon className="bg-[#fff] dark:bg-[#1B1B1B] text-black dark:text-[#E1E1E1] border p-3 w-12 h-12 rounded-full transition-all duration-300" />
+            </a>
+          ))}
         </div>
         <ThemeDropdown />
       </section>
-      <section className="mt-4 text-lg font-semibold text-center px-3">Copyright © Visual Vibe Creations. All Rights Reserved.</section>
+
+      <section className="mt-4 text-lg font-semibold text-center px-3 text-[#141414] dark:text-[#E1E1E1] transition-colors duration-300">
+        Copyright © Visual Vibe Creations. All Rights Reserved.
+      </section>
     </footer>
   );
 }

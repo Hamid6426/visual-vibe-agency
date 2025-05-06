@@ -5,8 +5,8 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full h-20 py-3 px-3 lg:px-0 sticky top-0">
-      <div className="px-3 max-w-3xl rounded-full bg-[#F3F3F3] mx-auto flex justify-between items-center h-14">
+    <header className="w-full h-20 z-50 py-3 px-3 lg:px-0">
+      <div className="px-3 max-w-6xl rounded-full bg-gray-400/40 text-black dark:text-white mx-auto flex justify-between items-center h-14">
         <img src="/logo-icon.png" className="rounded-full w-10 h-10" />
 
         {/* Desktop Menu */}
