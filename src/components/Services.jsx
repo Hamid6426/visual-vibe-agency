@@ -63,13 +63,13 @@ export default function Services() {
                 initial={{ scaleY: 0 }}
                 animate={contentInView ? { scaleY: 1 } : { scaleY: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="absolute top-0 left-0 w-full h-full bg-orange-400 origin-top rounded-2xl z-0"
+                className="absolute top-0 left-0 w-full h-full bg-[#222] text-white origin-top rounded-2xl z-0"
               />
               <div className="relative z-10">
-                <h2 className="text-2xl lg:text-4xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
+                <h2 className="text-2xl lg:text-4xl font-semibold text-[#E1E1E1]">
                   Content Writing
                 </h2>
-                <p className="text-[#1B1B1B] dark:text-[#E1E1E1]">
+                <p className="text-[#E1E1E1]">
                   We create authentic content that delivers true value to your
                   audience.
                 </p>

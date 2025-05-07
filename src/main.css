@@ -69,7 +69,19 @@ body[style*="overflow: hidden"] {
 }
 
 .animate-scroll-left {
-  animation: scroll-left 20s linear infinite;
+  animation: scroll-left 5s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .animate-scroll-left {
+    animation: scroll-left 8s linear infinite;
+  }
+}
+
+@media (min-width: 1280px) {
+  .animate-scroll-left {
+    animation: scroll-left 10s linear infinite;
+  }
 }
 
 @keyframes rotateOnce {
