@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { aboutPageData } from "../data/aboutPageData";
+import { Link } from "react-router-dom";
 
 export default function AboutUsPage() {
   const fadeInUp = {
