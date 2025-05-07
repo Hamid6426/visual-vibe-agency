@@ -8,6 +8,15 @@ export default function Projects() {
     visible: { opacity: 1, y: 0 },
   };
 
+  // Destructure first two projects
+  const [firstProject, secondProject] = projects;
+
+  // Refs and inView checks for animations
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const isInView1 = useInView(ref1, { once: true, margin: "-100px" });
+  const isInView2 = useInView(ref2, { once: true, margin: "-100px" });
+
   return (
     <main className="mx-auto w-full max-w-6xl px-3 sm:px-12 py-8 lg:pb-24 transition-colors duration-300">
       {/* Header */}
@@ -23,39 +32,59 @@ export default function Projects() {
       {/* Project Cards */}
       <section>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => {
-            const ref = useRef(null);
-            const isInView = useInView(ref, { once: true, margin: "-100px" });
+          {/* First Project */}
+          <motion.div
+            ref={ref1}
+            className="rounded overflow-hidden flex flex-col bg-white dark:bg-[#1B1B1B] border border-[#E1E1E1] dark:border-gray-700 shadow-md dark:shadow-lg transition-colors duration-300"
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView1 ? "visible" : "hidden"}
+            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+          >
+            <img
+              src={firstProject.image}
+              alt={firstProject.title}
+              className="w-full aspect-video object-cover"
+            />
+            <div className="p-6 flex flex-col gap-4">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                {firstProject.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400">
+                {firstProject.description}
+              </p>
+            </div>
+          </motion.div>
 
-            return (
-              <motion.div
-                key={project.id}
-                ref={ref}
-                className="rounded overflow-hidden flex flex-col bg-white dark:bg-[#1B1B1B] border border-[#E1E1E1] dark:border-gray-700 shadow-md dark:shadow-lg transition-colors duration-300"
-                variants={fadeUp}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full aspect-video object-cover"
-                />
-                <div className="p-6 flex flex-col gap-4">
-                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {project.description}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+          {/* Second Project */}
+          <motion.div
+            ref={ref2}
+            className="rounded overflow-hidden flex flex-col bg-white dark:bg-[#1B1B1B] border border-[#E1E1E1] dark:border-gray-700 shadow-md dark:shadow-lg transition-colors duration-300"
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView2 ? "visible" : "hidden"}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          >
+            <img
+              src={secondProject.image}
+              alt={secondProject.title}
+              className="w-full aspect-video object-cover"
+            />
+            <div className="p-6 flex flex-col gap-4">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                {secondProject.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400">
+                {secondProject.description}
+              </p>
+            </div>
+          </motion.div>
 
           {/* Button */}
-          <a href="/projects" className="text-center mt-4 px-4 py-2 inline-block max-w-sm rounded-full bg-black text-white dark:bg-[#E1E1E1] dark:text-[#1B1B1B] hover:opacity-90 transition-all duration-200">
+          <a
+            href="/projects"
+            className="text-center mt-4 px-4 py-2 inline-block max-w-sm rounded-full bg-black text-white dark:bg-[#E1E1E1] dark:text-[#1B1B1B] hover:opacity-90 transition-all duration-200"
+          >
             Check out more
           </a>
         </div>
