@@ -21,18 +21,19 @@ export default function Projects() {
   return (
     <main className="mx-auto w-full max-w-6xl px-3 sm:px-12 py-8 lg:pb-24 transition-colors duration-300">
       {/* Header */}
-      <section className="flex flex-col gap-6 sm:flex-row sm:justify-between w-full mb-12">
+      <section className="flex flex-col items-center justify-center gap-6 w-full mb-12">
         <h2 className="text-4xl sm:text-6xl font-medium text-gray-900 dark:text-[#E1E1E1]">
           Projects
         </h2>
-        <p className="max-w-sm w-full lg:text-lg text-gray-600 dark:text-gray-400">
-          Check out some of our fantastic works and leverage our services for your brand
+        <p className="text-center w-full lg:text-lg text-gray-600 dark:text-gray-400">
+          Check out some of our fantastic works and leverage our services for
+          your brand
         </p>
       </section>
 
       {/* Project Cards */}
       <section>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* First Project */}
           <motion.div
             ref={ref1}
@@ -80,11 +81,12 @@ export default function Projects() {
               </p>
             </div>
           </motion.div>
-
-          {/* Button */}
+        </div>
+        {/* Button */}
+        <div className="w-full flex justify-center mt-4">
           <Link
             to="/projects"
-            className="text-center mt-4 px-4 py-2 inline-block max-w-sm rounded-full bg-black text-white dark:bg-[#E1E1E1] dark:text-[#1B1B1B] hover:opacity-90 transition-all duration-200"
+            className="text-center mt-4 px-24 py-3 rounded-full bg-black text-white dark:bg-[#E1E1E1] dark:text-[#1B1B1B] hover:opacity-90 transition-all duration-200"
           >
             Check out more
           </Link>
