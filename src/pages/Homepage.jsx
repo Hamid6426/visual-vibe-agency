@@ -7,6 +7,7 @@ import Services from "../components/Services";
 import Testimonial from "../components/Testimonial";
 import Projects from "../components/Projects";
 import AnimatedText from "../components/AnimatedText";
+import CallToAction from "../components/CallToAction";
 
 function Homepage() {
   return (
@@ -17,6 +18,7 @@ function Homepage() {
       <Projects />
       {/* <Faqs /> */}
       <Testimonial />
+      <CallToAction />
       <Footer />
     </main>
   );

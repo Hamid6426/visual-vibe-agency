@@ -1,26 +1,27 @@
-import { useEffect, useState } from 'react';
-import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
+import { useEffect, useState } from "react";
+import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 const ThemeDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'Device';
+    return localStorage.getItem("theme") || "Device";
   });
 
   const toggleDropdown = () => setIsOpen(!isOpen);
-
+  
   const applyTheme = (theme) => {
-    if (theme === 'Dark') {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else if (theme === 'Light') {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+    if (theme === "Dark") {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "Dark");
+    } else if (theme === "Light") {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "Light");
     } else {
-      // Device (System preference)
-      localStorage.removeItem('theme');
-      const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.classList.toggle('dark', isSystemDark);
+      localStorage.setItem("theme", "Device"); // Optional
+      const isSystemDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      document.documentElement.classList.toggle("dark", isSystemDark);
     }
   };
 
@@ -54,7 +55,7 @@ const ThemeDropdown = () => {
       {isOpen && (
         <div className="absolute right-0 mt-1 w-32 bg-white border border-gray-300 rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
           <div className="py-1">
-            {['Light', 'Dark', 'Device'].map((theme) => (
+            {["Light", "Dark", "Device"].map((theme) => (
               <button
                 key={theme}
                 onClick={() => selectTheme(theme)}
