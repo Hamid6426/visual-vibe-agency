@@ -30,8 +30,8 @@ export default function Services() {
             an answer within 24 hours
           </div>
           <Link
-            href="/contact"
-            className="px-6 py-2 text-center max-w-sm rounded-full font-medium transition-colors duration-300 bg-black text-white dark:bg-[#E1E1E1] dark:text-[#1B1B1B]"
+            to="/contact"
+            className="px-6 py-3 text-center max-w-xs rounded-full font-medium transition-colors duration-300 bg-black text-white dark:bg-[#E1E1E1] dark:text-[#1B1B1B]"
           >
             Ask a question
           </Link>

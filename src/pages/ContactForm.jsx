@@ -33,18 +33,14 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="max-w-lg my-12 mx-auto border border-gray-300 dark:border-gray-600  p-6 space-y-4 bg-white dark:bg-[#141414] rounded-2xl shadow-lg"
       >
-        <h3 className="text-2xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
+        <h3 className="text-2xl mb-2 text-center font-semibold text-[#141414] dark:text-[#E1E1E1]">
           Get in Touch
         </h3>
+        <p className="mb-6 text-center text-[#141414] dark:text-[#E1E1E1]">
+        </p>
 
         {/* Name */}
         <div>
-          <label
-            htmlFor="name"
-            className="block mb-1 text-sm font-medium text-[#141414] dark:text-[#E1E1E1]"
-          >
-            Name
-          </label>
           <input
             id="name"
             name="name"
@@ -52,6 +48,7 @@ export default function ContactForm() {
             value={form.name}
             onChange={handleChange}
             required
+            placeholder="Name"
             className="
             w-full px-4 py-2 rounded-lg 
             border border-gray-300 dark:border-gray-600 
@@ -65,12 +62,6 @@ export default function ContactForm() {
 
         {/* Email */}
         <div>
-          <label
-            htmlFor="email"
-            className="block mb-1 text-sm font-medium text-[#141414] dark:text-[#E1E1E1]"
-          >
-            Email
-          </label>
           <input
             id="email"
             name="email"
@@ -78,6 +69,7 @@ export default function ContactForm() {
             value={form.email}
             onChange={handleChange}
             required
+            placeholder="Email"
             className="
             w-full px-4 py-2 rounded-lg 
             border border-gray-300 dark:border-gray-600 
@@ -91,12 +83,6 @@ export default function ContactForm() {
 
         {/* Message */}
         <div>
-          <label
-            htmlFor="message"
-            className="block mb-1 text-sm font-medium text-[#141414] dark:text-[#E1E1E1]"
-          >
-            Message
-          </label>
           <textarea
             id="message"
             name="message"
@@ -104,6 +90,7 @@ export default function ContactForm() {
             value={form.message}
             onChange={handleChange}
             required
+            placeholder="Your Message"
             className="
             w-full px-4 py-2 rounded-lg 
             border border-gray-300 dark:border-gray-600 

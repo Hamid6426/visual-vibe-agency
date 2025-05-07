@@ -15,11 +15,11 @@ export default function BlogsPage() {
       <Header />
       <main className="mx-auto w-full max-w-6xl px-3 lg:px-0 py-12 transition-colors duration-300">
         {/* Header */}
-        <section className="mb-12">
+        <section className="mb-12 text-center">
           <h1 className="text-4xl sm:text-5xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
             Our Blog
           </h1>
-          <p className="mt-2 text-gray-600 dark:text-gray-400 lg:text-lg">
+          <p className="mt-4 text-gray-600 dark:text-gray-400 lg:text-lg">
             Insights, tutorials, and updates from our team.
           </p>
         </section>

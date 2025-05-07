@@ -6,7 +6,7 @@ import ThemeDropdown from "./ThemeDropdown";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white dark:bg-[#141414] flex flex-col gap-8 justify-center items-center py-10 transition-colors duration-300">
+    <footer className="w-full shadow-inner shadow-gray-200 dark:shadow-gray-800 bg-white dark:bg-[#141414] flex flex-col gap-12 justify-center items-center py-10 transition-colors duration-300">
       {/* Brand */}
       <section className="flex justify-end items-end">
         <div className="font-bold text-[#141414] dark:text-[#E1E1E1] text-3xl md:text-5xl">
@@ -16,7 +16,7 @@ export default function Footer() {
       </section>
 
       {/* Nav Links */}
-      <section className="flex gap-6 justify-center font-semibold flex-wrap">
+      <section className="flex gap-10 justify-center font-semibold flex-wrap">
         <Link
           to="/about"
           className="text-[#141414] dark:text-[#E1E1E1] transition-colors duration-200"

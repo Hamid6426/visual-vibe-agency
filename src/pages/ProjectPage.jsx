@@ -17,12 +17,12 @@ export default function ProjectsPage() {
       <Header />
       <main className="mx-auto w-full max-w-7xl px-4 sm:px-12 py-12 transition-colors duration-300">
         {/* Header */}
-        <section className="flex flex-col gap-4 sm:flex-row sm:justify-between mb-12">
+        <section className="flex flex-col items-center gap-4 mb-12">
           <h1 className="text-4xl sm:text-6xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
             Our Projects
           </h1>
-          <p className="max-w-md text-gray-600 dark:text-gray-400 lg:text-lg">
-            Here are nine of our standout works—each tailored to drive results
+          <p className="text-gray-600 dark:text-gray-400 lg:text-lg">
+            Here are nine of our standout works each tailored to drive results
             and delight users.
           </p>
         </section>

@@ -12,7 +12,7 @@ export default function AboutUsPage() {
   };
 
   return (
-    <div className="bg-white dark:bg-[#141414]">
+    <div className="bg-white w-full dark:bg-[#141414]">
       <Header />
       <main className="mx-auto w-full max-w-6xl px-3 sm:px-0 py-12 transition-colors duration-300">
         {/* Hero Section */}
@@ -127,7 +127,7 @@ export default function AboutUsPage() {
 
         {/* Call to Action */}
         <motion.section
-          className="text-center"
+          className="text-center w-full"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -137,8 +137,11 @@ export default function AboutUsPage() {
           <h2 className="text-3xl font-semibold text-[#141414] dark:text-[#E1E1E1] mb-8 ">
             {aboutPageData.cta.text}
           </h2>
-          <motion.div className="w-full bg-white max-w-40 dark:bg-black  px-6 hover:bg-gray-400/40 dark:hover:bg-[#141414]  py-3 rounded-lg cursor-pointer text-black dark:text-white font-semibold border border-gray-300 dark:border-gray-600 transition">
-            <Link to={aboutPageData.cta.link}>
+          <motion.div className="w-full flex items-center text-center justify-center">
+            <Link
+              className="max-w-40 py-3 w-full  bg-white dark:bg-black  px-6 hover:bg-gray-400/40 dark:hover:bg-[#141414]  rounded-lg cursor-pointer text-black dark:text-white font-semibold border border-gray-300 dark:border-gray-600 transition"
+              to={aboutPageData.cta.link}
+            >
               {aboutPageData.cta.buttonLabel}
             </Link>
           </motion.div>
