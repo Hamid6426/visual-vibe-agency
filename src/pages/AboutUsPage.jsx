@@ -136,12 +136,11 @@ export default function AboutUsPage() {
           <h2 className="text-3xl font-semibold text-[#141414] dark:text-[#E1E1E1] mb-8 ">
             {aboutPageData.cta.text}
           </h2>
-          <motion.a
-            href={aboutPageData.cta.link}
-            className="w-full bg-white dark:bg-black px-6 hover:bg-gray-400/40 dark:hover:bg-[#141414] py-3 rounded-lg cursor-pointer text-black dark:text-white font-semibold border border-gray-300 dark:border-gray-600 transition"
-          >
-            {aboutPageData.cta.buttonLabel}
-          </motion.a>
+          <motion.div className="w-full bg-white max-w-40 dark:bg-black  px-6 hover:bg-gray-400/40 dark:hover:bg-[#141414]  py-3 rounded-lg cursor-pointer text-black dark:text-white font-semibold border border-gray-300 dark:border-gray-600 transition">
+            <Link to={aboutPageData.cta.link}>
+              {aboutPageData.cta.buttonLabel}
+            </Link>
+          </motion.div>
         </motion.section>
       </main>
       <Footer />

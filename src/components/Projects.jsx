@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { projects } from "../data/projectsData";
+import { Link } from "react-router-dom";
 
 export default function Projects() {
   const fadeUp = {
@@ -81,12 +82,12 @@ export default function Projects() {
           </motion.div>
 
           {/* Button */}
-          <a
-            href="/projects"
+          <Link
+            to="/projects"
             className="text-center mt-4 px-4 py-2 inline-block max-w-sm rounded-full bg-black text-white dark:bg-[#E1E1E1] dark:text-[#1B1B1B] hover:opacity-90 transition-all duration-200"
           >
             Check out more
-          </a>
+          </Link>
         </div>
       </section>
     </main>

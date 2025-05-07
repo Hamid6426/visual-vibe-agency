@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { servicesLeft, servicesRight } from "../data/servicesData";
+import { Link } from "react-router-dom";
 
 export default function Services() {
   const leftRef = useRef(null);
@@ -25,14 +26,15 @@ export default function Services() {
             Services
           </div>
           <div className="sm:max-w-sm w-full text-[#1B1B1B] dark:text-[#E1E1E1]">
-            Can't find the answer you're looking for? Ask your questions and get an answer within 24 hours
+            Can't find the answer you're looking for? Ask your questions and get
+            an answer within 24 hours
           </div>
-          <a
+          <Link
             href="/contact"
             className="px-6 py-2 text-center max-w-sm rounded-full font-medium transition-colors duration-300 bg-black text-white dark:bg-[#E1E1E1] dark:text-[#1B1B1B]"
           >
             Ask a question
-          </a>
+          </Link>
         </section>
 
         {/* Boxes Section */}

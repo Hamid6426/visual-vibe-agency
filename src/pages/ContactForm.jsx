@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import supabase from '../utils/supabase';
+import { useState } from "react";
+import supabase from "../utils/supabase";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
