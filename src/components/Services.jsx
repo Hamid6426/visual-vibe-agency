@@ -1,13 +1,14 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { servicesLeft, servicesRight } from "../data/servicesData";
 
 export default function Services() {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
+  const contentRef = useRef(null);
+
   const leftInView = useInView(leftRef, { once: true, margin: "-100px" });
   const rightInView = useInView(rightRef, { once: true, margin: "-100px" });
-
-  const contentRef = useRef(null);
   const contentInView = useInView(contentRef, { once: true, margin: "-100px" });
 
   const fadeRight = {
@@ -23,9 +24,8 @@ export default function Services() {
           <div className="text-4xl sm:text-6xl font-medium text-[#141414] dark:text-[#E1E1E1]">
             Services
           </div>
-          <div className="sm:max-w-sm w-full  text-[#1B1B1B] dark:text-[#E1E1E1]">
-            Can't find the answer you're looking for? Ask your questions and get
-            an answer within 24 hours
+          <div className="sm:max-w-sm w-full text-[#1B1B1B] dark:text-[#E1E1E1]">
+            Can't find the answer you're looking for? Ask your questions and get an answer within 24 hours
           </div>
           <a
             href="/contact"
@@ -46,35 +46,40 @@ export default function Services() {
             animate={leftInView ? "visible" : "hidden"}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="rounded-2xl w-full flex flex-col justify-end p-4 border border-[#E1E1E1] dark:border-gray-700 bg-[#F3F3F3] dark:bg-[#1B1B1B] transition-colors duration-300">
-              <h2 className="text-2xl lg:text-4xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
-                Social Ads
-              </h2>
-              <p className="text-[#1B1B1B] dark:text-[#E1E1E1]">
-                We create authentic content that delivers true value to your
-                audience.
-              </p>
-            </div>
-            <div
-              ref={contentRef}
-              className="relative rounded-2xl w-full h-80 flex flex-col justify-end p-4 border border-[#E1E1E1] dark:border-gray-700 bg-[#F3F3F3] dark:bg-[#1B1B1B] overflow-hidden transition-colors duration-300"
-            >
-              <motion.div
-                initial={{ scaleY: 0 }}
-                animate={contentInView ? { scaleY: 1 } : { scaleY: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="absolute top-0 left-0 w-full h-full bg-[#222] text-white origin-top rounded-2xl z-0"
-              />
-              <div className="relative z-10">
-                <h2 className="text-2xl lg:text-4xl font-semibold text-[#E1E1E1]">
-                  Content Writing
-                </h2>
-                <p className="text-[#E1E1E1]">
-                  We create authentic content that delivers true value to your
-                  audience.
-                </p>
-              </div>
-            </div>
+            {servicesLeft.map((item, index) =>
+              item.type === "animated" ? (
+                <div
+                  key={index}
+                  ref={contentRef}
+                  className="relative rounded-2xl w-full h-80 flex flex-col justify-end p-4 border border-[#E1E1E1] dark:border-gray-700 bg-[#F3F3F3] dark:bg-[#1B1B1B] overflow-hidden transition-colors duration-300"
+                >
+                  <motion.div
+                    initial={{ scaleY: 0 }}
+                    animate={contentInView ? { scaleY: 1 } : { scaleY: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="absolute top-0 left-0 w-full h-full bg-[#222] text-white origin-top rounded-2xl z-0"
+                  />
+                  <div className="relative z-10">
+                    <h2 className="text-2xl lg:text-4xl font-semibold text-[#E1E1E1]">
+                      {item.title}
+                    </h2>
+                    <p className="text-[#E1E1E1]">{item.text}</p>
+                  </div>
+                </div>
+              ) : (
+                <div
+                  key={index}
+                  className="rounded-2xl w-full flex flex-col justify-end p-4 border border-[#E1E1E1] dark:border-gray-700 bg-[#F3F3F3] dark:bg-[#1B1B1B] transition-colors duration-300"
+                >
+                  <h2 className="text-2xl lg:text-4xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
+                    {item.title}
+                  </h2>
+                  <p className="text-[#1B1B1B] dark:text-[#E1E1E1]">
+                    {item.text}
+                  </p>
+                </div>
+              )
+            )}
           </motion.div>
 
           {/* Right Column */}
@@ -86,16 +91,7 @@ export default function Services() {
             animate={rightInView ? "visible" : "hidden"}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
-            {[
-              {
-                title: "SaaS Marketing",
-                text: "We create authentic content that delivers true value to your audience.",
-              },
-              {
-                title: "SEO",
-                text: "We create authentic content that delivers true value to your audience.",
-              },
-            ].map((item, idx) => (
+            {servicesRight.map((item, idx) => (
               <div
                 key={idx}
                 className="rounded-2xl w-full lg:w-full flex flex-col justify-end p-4 border border-[#E1E1E1] dark:border-gray-700 bg-[#F3F3F3] dark:bg-[#1B1B1B] transition-colors duration-300"

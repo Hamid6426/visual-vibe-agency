@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { supabase } from "../utils/supabaseClient";
+import { useState } from 'react';
+import supabase from '../utils/supabase';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -29,7 +29,6 @@ export default function ContactForm() {
   return (
     <main className="bg-white dark:bg-[#141414]">
       <Header />
-
       <form
         onSubmit={handleSubmit}
         className="max-w-lg my-12 mx-auto border border-gray-300 dark:border-gray-600  p-6 space-y-4 bg-white dark:bg-[#141414] rounded-2xl shadow-lg"
@@ -124,7 +123,7 @@ export default function ContactForm() {
           w-full py-3 rounded-lg cursor-pointer text-black dark:text-white font-semibold border border-gray-300 dark:border-gray-600 
           ${
             submitting
-              ? "bg-black cursor-not-allowed"
+              ? "bg-gray-400 cursor-not-allowed"
               : "hover:bg-gray-400/40 dark:hover:bg-black "
           }
           transition

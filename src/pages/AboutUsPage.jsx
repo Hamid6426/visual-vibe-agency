@@ -2,9 +2,9 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { aboutPageData } from "../data/aboutPageData";
 
 export default function AboutUsPage() {
-  // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
@@ -13,7 +13,6 @@ export default function AboutUsPage() {
   return (
     <div className="bg-white dark:bg-[#141414]">
       <Header />
-
       <main className="mx-auto w-full max-w-6xl px-3 sm:px-0 py-12 transition-colors duration-300">
         {/* Hero Section */}
         <motion.section
@@ -25,29 +24,16 @@ export default function AboutUsPage() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl sm:text-6xl font-bold text-[#141414] dark:text-[#E1E1E1]">
-            About Our Agency
+            {aboutPageData.hero.title}
           </h1>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            We craft bold digital experiences that amplify your brand’s voice
-            and drive growth.
+            {aboutPageData.hero.description}
           </p>
         </motion.section>
 
         {/* Mission & Vision */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
-          {[
-            {
-              title: "Our Mission",
-              text: `To empower businesses with innovative design and technology
-              solutions that resonate with their audience and elevate their
-              brand identity.`,
-            },
-            {
-              title: "Our Vision",
-              text: `To be the leading creative partner for brands seeking bold
-              storytelling, seamless user experiences, and measurable impact.`,
-            },
-          ].map((item, idx) => {
+          {aboutPageData.missionVision.map((item, idx) => {
             const ref = useRef(null);
             const isInView = useInView(ref, { once: true, margin: "-100px" });
             return (
@@ -77,32 +63,7 @@ export default function AboutUsPage() {
             Core Values
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Creativity",
-                desc: "We push boundaries to craft unique and impactful solutions.",
-              },
-              {
-                title: "Collaboration",
-                desc: "We work closely with clients to co-create and iterate.",
-              },
-              {
-                title: "Integrity",
-                desc: "We uphold transparency and honesty in all we do.",
-              },
-              {
-                title: "Excellence",
-                desc: "We strive for the highest quality in design and development.",
-              },
-              {
-                title: "Innovation",
-                desc: "We embrace new technologies to stay ahead of the curve.",
-              },
-              {
-                title: "Empathy",
-                desc: "We prioritize user needs to create meaningful experiences.",
-              },
-            ].map((value, idx) => {
+            {aboutPageData.coreValues.map((value, idx) => {
               const ref = useRef(null);
               const isInView = useInView(ref, { once: true, margin: "-100px" });
               return (
@@ -133,23 +94,7 @@ export default function AboutUsPage() {
             Meet the Team
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              {
-                name: "Alice Johnson",
-                role: "Creative Director",
-                img: "/hamid-profile.png",
-              },
-              {
-                name: "Michael Lee",
-                role: "Lead Developer",
-                img: "/hamid-profile.png",
-              },
-              {
-                name: "Sara Kim",
-                role: "UX/UI Designer",
-                img: "/hamid-profile.png",
-              },
-            ].map((member, idx) => {
+            {aboutPageData.team.map((member, idx) => {
               const ref = useRef(null);
               const isInView = useInView(ref, { once: true, margin: "-100px" });
               return (
@@ -189,17 +134,16 @@ export default function AboutUsPage() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl font-semibold text-[#141414] dark:text-[#E1E1E1] mb-8 ">
-            Ready to elevate your brand?
+            {aboutPageData.cta.text}
           </h2>
           <motion.a
-            href="/contact"
-            className="w-full bg-white dark:bg-black  px-6 hover:bg-gray-400/40 dark:hover:bg-[#141414]  py-3 rounded-lg cursor-pointer text-black dark:text-white font-semibold border border-gray-300 dark:border-gray-600 transition"
+            href={aboutPageData.cta.link}
+            className="w-full bg-white dark:bg-black px-6 hover:bg-gray-400/40 dark:hover:bg-[#141414] py-3 rounded-lg cursor-pointer text-black dark:text-white font-semibold border border-gray-300 dark:border-gray-600 transition"
           >
-            Get in Touch
+            {aboutPageData.cta.buttonLabel}
           </motion.a>
         </motion.section>
       </main>
-
       <Footer />
     </div>
   );

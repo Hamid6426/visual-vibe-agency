@@ -1,21 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-
-const projects = [
-  {
-    id: 1,
-    title: "E-commerce Redesign",
-    description: "A modern online store experience with seamless UI/UX and custom checkout flow.",
-    image: "/project-1.png",
-  },
-  {
-    id: 2,
-    title: "Startup Landing Page",
-    description: "Crafted a responsive landing page for a tech startup to increase sign-ups.",
-    image: "/project-1.png",
-  },
-  // Add more projects as needed
-];
+import { projects } from "../data/projectsData";
 
 export default function Projects() {
   const fadeUp = {
