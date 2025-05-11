@@ -183,32 +183,32 @@ export default function Services() {
   };
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-3 lg:px-0 h-screen flex items-center justify-center flex-col bg-[#FFFFFF] dark:bg-[#141414] transition-colors duration-300">
-      <div className="flex flex-col lg:flex-row justify-center gap-6 md:gap-6 lg:gap-12 px-4">
+    <main className="mx-auto w-full max-w-6xl px-3 lg:px-0 lg:pb-24 bg-[#FFFFFF] dark:bg-[#141414] transition-colors duration-300">
+      <div className="flex flex-col lg:flex-row justify-center gap-6 lg:gap-12 px-4">
         {/* Text Section */}
-        <section className="flex flex-col items-center lg:w-5/12 gap-6 lg:gap-6 w-full mb-4">
-          <div className=" text-center text-4xl md:text-5xl lg:text-6xl font-medium text-[#141414] dark:text-[#E1E1E1]">
+        <section className="flex flex-col items-center lg:w-5/12 gap-6 w-full">
+          <div className="text-center text-5xl lg:text-6xl font-medium text-[#141414] dark:text-[#E1E1E1]">
             Services
           </div>
-          <div className="text-center text-base w-full  text-[#1B1B1B] dark:text-[#E1E1E1]">
+          <div className="text-center w-full text-[#1B1B1B] dark:text-[#E1E1E1]">
             Can't find the answer you're looking for? Ask your questions and get
             an answer within 24 hours
           </div>
           <Link
             to="/contact"
-            className="w-full max-w-xs py-2 lg:py-3 text-center rounded-full font-medium transition-colors duration-300 bg-black text-white dark:bg-[#E1E1E1] dark:text-[#1B1B1B]"
+            className="w-full max-w-sm py-3 text-center  rounded-full font-medium transition-colors duration-300 bg-black text-white dark:bg-[#E1E1E1] dark:text-[#1B1B1B]"
           >
             Ask a question
           </Link>
         </section>
 
         {/* Boxes Section */}
-        <section className="flex flex-col lg:flex-row lg:w-7/12 gap-6 lg:gap-6">
+        <section className="flex flex-col lg:flex-row lg:w-7/12 gap-6">
           {/* LEFT COLUMN SMALL SCREENS */}
 
           {/* Right Column */}
           <motion.div
-            className="flex flex-col gap-6 lg:gap-6 w-full lg:hidden"
+            className="flex flex-col gap-6 w-full lg:hidden"
             ref={rightRef}
             variants={fadeRight}
             initial="hidden"
@@ -218,7 +218,7 @@ export default function Services() {
             {servicesLeft.map((item, idx) => (
               <div
                 key={idx}
-                className="rounded-2xl w-full lg:w-full flex flex-col justify-end p-3 lg:p-4 border border-[#E1E1E1] dark:border-gray-700 bg-[#F3F3F3] dark:bg-[#1B1B1B] transition-colors duration-300"
+                className="rounded-2xl w-full lg:w-full flex flex-col justify-end p-4 border border-[#E1E1E1] dark:border-gray-700 bg-[#F3F3F3] dark:bg-[#1B1B1B] transition-colors duration-300"
               >
                 <h2 className="text-2xl lg:text-4xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
                   {item.title}
@@ -232,7 +232,7 @@ export default function Services() {
 
           {/* Left Column */}
           <motion.div
-            className="hidden lg:flex flex-col gap-6 lg:gap-6 w-full"
+            className="hidden lg:flex flex-col gap-6 w-full"
             ref={leftRef}
             variants={fadeRight}
             initial="hidden"
@@ -323,9 +323,9 @@ export default function Services() {
               ) : (
                 <div
                   key={index}
-                  className="rounded-2xl w-full flex flex-col p-3 lg:p-4 justify-end border border-[#E1E1E1] dark:border-gray-700 bg-[#F3F3F3] dark:bg-[#1B1B1B] transition-colors duration-300"
+                  className="rounded-2xl w-full flex flex-col justify-end p-4 border border-[#E1E1E1] dark:border-gray-700 bg-[#F3F3F3] dark:bg-[#1B1B1B] transition-colors duration-300"
                 >
-                  <h2 className="text-xl lg:text-4xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
+                  <h2 className="text-2xl lg:text-4xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
                     {item.title}
                   </h2>
                   <p className="text-[#1B1B1B] dark:text-[#E1E1E1]">
