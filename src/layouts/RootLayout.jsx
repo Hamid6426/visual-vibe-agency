@@ -1,12 +1,17 @@
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Outlet } from "react-router-dom";
 
-const RootLayout = ({ children }) => {
+const RootLayout = () => {
+  const { pathname } = useLocation();
+  const isContactPage = pathname === "/contact";
+
   return (
-    <div className="bg-white dark:bg-[#141414]">
+    <div className={isContactPage 
+      ? "min-h-dvh bg-white dark:bg-[#141414] flex justify-between flex-col items-center w-full" : "min-h-dvh bg-white dark:bg-[#141414]"}>
       <Navbar />
-      <main>
+      <main className={isContactPage 
+      ? "w-full" : ""}>
         <Outlet />
       </main>
       <Footer />
