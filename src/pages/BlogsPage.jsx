@@ -1,7 +1,5 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import { blogs } from "../data/blogsData";
 
 export default function BlogsPage() {
@@ -12,8 +10,7 @@ export default function BlogsPage() {
 
   return (
     <div className="bg-white dark:bg-[#141414]">
-      <Header />
-      <main className="mx-auto w-full max-w-6xl px-3 lg:px-0 py-12 transition-colors duration-300">
+      <main className="mx-auto w-full max-w-6xl px-3 lg:px-0 py-6 md:py-12 transition-colors duration-300">
         {/* Header */}
         <section className="mb-12 text-center">
           <h1 className="text-4xl sm:text-5xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
@@ -67,7 +64,6 @@ export default function BlogsPage() {
           })}
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

@@ -1,7 +1,5 @@
 // src/pages/Homepage.jsx
-import Header from "../components/Header";
 import Hero from "../components/Hero";
-import Footer from "../components/Footer";
 import Services from "../components/Services";
 import Testimonial from "../components/Testimonial";
 import Projects from "../components/Projects";
@@ -9,14 +7,12 @@ import CallToAction from "../components/CallToAction";
 
 function Homepage() {
   return (
-    <main className="overflow-x-hidden bg-white dark:bg-[#141414]">
-      <Header />
+    <main className="overflow-x-hidden">
       <Hero />
       <Services />
       <Projects />
       <Testimonial />
       <CallToAction />
-      <Footer />
     </main>
   );
 }

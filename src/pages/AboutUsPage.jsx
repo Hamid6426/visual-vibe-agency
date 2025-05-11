@@ -1,7 +1,5 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import { aboutPageData } from "../data/aboutPageData";
 import { Link } from "react-router-dom";
 
@@ -13,8 +11,7 @@ export default function AboutUsPage() {
 
   return (
     <div className="bg-white w-full dark:bg-[#141414]">
-      <Header />
-      <main className="mx-auto w-full max-w-6xl px-3 sm:px-0 py-12 transition-colors duration-300">
+      <main className="mx-auto w-full max-w-6xl px-3 sm:px-0 py-6 md:py-12 transition-colors duration-300">
         {/* Hero Section */}
         <motion.section
           className="text-center mb-16"
@@ -27,7 +24,7 @@ export default function AboutUsPage() {
           <h1 className="text-5xl sm:text-6xl font-bold text-[#141414] dark:text-[#E1E1E1]">
             {aboutPageData.hero.title}
           </h1>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg max-w-sm mt-8 text-gray-600 dark:text-gray-400 mx-auto">
             {aboutPageData.hero.description}
           </p>
         </motion.section>
@@ -147,7 +144,6 @@ export default function AboutUsPage() {
           </motion.div>
         </motion.section>
       </main>
-      <Footer />
     </div>
   );
 }

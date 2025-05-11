@@ -14,9 +14,11 @@ body[style*="overflow: hidden"] {
 
 @theme {
   /* 256px very small phones rarely used */
-  --breakpoint-xs: 16rem;
+  --breakpoint-3xs: 16rem;
+  --breakpoint-2xs: 24rem;
+  --breakpoint-xs: 32rem;
   /* 512px small phones */
-  --breakpoint-sm: 32rem;
+  --breakpoint-sm: 40rem;
   /* 768px large phones */
   --breakpoint-md: 48rem;
   /* 1024px tablet */

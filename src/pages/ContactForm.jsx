@@ -1,7 +1,5 @@
 import { useState } from "react";
 import supabase from "../utils/supabase";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -28,10 +26,9 @@ export default function ContactForm() {
 
   return (
     <main className="bg-white dark:bg-[#141414]">
-      <Header />
       <form
         onSubmit={handleSubmit}
-        className="max-w-lg my-12 mx-auto border border-gray-300 dark:border-gray-600  p-6 space-y-4 bg-white dark:bg-[#141414] rounded-2xl shadow-lg"
+        className="max-w-lg md:my-12 mx-auto sm:border border-gray-300 dark:border-gray-600 p-6 space-y-4 bg-white dark:bg-[#141414] rounded-2xl sm:shadow-lg"
       >
         <h3 className="text-2xl mb-2 text-center font-semibold text-[#141414] dark:text-[#E1E1E1]">
           Get in Touch
@@ -120,7 +117,6 @@ export default function ContactForm() {
         </button>
       </form>
 
-      <Footer />
     </main>
   );
 }

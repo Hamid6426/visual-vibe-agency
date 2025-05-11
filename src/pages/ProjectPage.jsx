@@ -2,8 +2,6 @@
 
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import { projects } from "../data/projectsData";
 
 export default function ProjectsPage() {
@@ -14,14 +12,13 @@ export default function ProjectsPage() {
 
   return (
     <div className="bg-white dark:bg-[#141414]">
-      <Header />
-      <main className="mx-auto w-full max-w-7xl px-4 sm:px-12 py-12 transition-colors duration-300">
+      <main className="mx-auto w-full max-w-7xl px-4 sm:px-12 py-6 md:py-12 transition-colors duration-300">
         {/* Header */}
         <section className="flex flex-col items-center gap-4 mb-12">
           <h1 className="text-4xl sm:text-6xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
             Our Projects
           </h1>
-          <p className="text-gray-600 dark:text-gray-400 lg:text-lg">
+          <p className="text-gray-600 text-center dark:text-gray-400 lg:text-lg">
             Here are nine of our standout works each tailored to drive results
             and delight users.
           </p>
@@ -70,7 +67,6 @@ export default function ProjectsPage() {
           })}
         </section>
       </main>
-      <Footer />
     </div>
   );
 }
