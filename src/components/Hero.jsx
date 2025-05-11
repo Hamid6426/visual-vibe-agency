@@ -21,12 +21,12 @@ export default function Hero() {
   }, [scrollY, rotateLogo]);
 
   return (
-    <div className="relative flex flex-col justify-start items-center py-16 bg-[#FFFFFF] dark:bg-[#141414] transition-colors duration-300">
+    <div className="h-screen relative flex flex-col justify-center items-center bg-[#FFFFFF] dark:bg-[#141414] transition-colors duration-300">
       {/* Headings */}
-      <h2 className="text-4xl sm:text-5xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
+      <h2 className="text-5xl sm:text-6xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
         The loud voice
       </h2>
-      <h2 className="text-4xl mb-4 sm:text-5xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
+      <h2 className="text-5xl mb-4 mt-2 sm:text-6xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
         of your brand
       </h2>
 

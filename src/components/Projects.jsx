@@ -19,10 +19,10 @@ export default function Projects() {
   const isInView2 = useInView(ref2, { once: true, margin: "-100px" });
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-3 sm:px-12 py-8 lg:pb-24 transition-colors duration-300">
+    <main className="mx-auto w-full max-w-6xl px-3 sm:px-12 flex justify-center items-center flex-col transition-colors duration-300">
       {/* Header */}
-      <section className="flex flex-col items-center justify-center gap-6 w-full mb-12">
-        <h2 className="text-4xl sm:text-6xl font-medium text-gray-900 dark:text-[#E1E1E1]">
+      <section className="flex flex-col items-center justify-center gap-6 w-full">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-[#E1E1E1]">
           Projects
         </h2>
         <p className="text-center w-full lg:text-lg text-gray-600 dark:text-gray-400">
@@ -49,10 +49,10 @@ export default function Projects() {
               className="w-full aspect-video object-cover"
             />
             <div className="p-6 flex flex-col gap-4">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-semibold text-center lg:text-left text-gray-900 dark:text-white">
                 {firstProject.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 hidden lg:block dark:text-gray-400">
                 {firstProject.description}
               </p>
             </div>
@@ -73,10 +73,10 @@ export default function Projects() {
               className="w-full aspect-video object-cover"
             />
             <div className="p-6 flex flex-col gap-4">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-semibold text-center lg:text-left text-gray-900 dark:text-white">
                 {secondProject.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 hidden lg:block dark:text-gray-400">
                 {secondProject.description}
               </p>
             </div>

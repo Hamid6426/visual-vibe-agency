@@ -1,0 +1,15 @@
+/* Portrait-specific styles */
+.portrait-card {
+  display: block;
+}
+
+.portrait-card img {
+  object-fit: cover;
+}
+
+.portrait-card .absolute {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

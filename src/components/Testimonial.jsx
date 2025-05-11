@@ -3,7 +3,7 @@ import { testimonials } from "../data/testimonialsData";
 
 export default function Testimonial() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-[#141414] transition-colors duration-300 py-12">
+    <main className="overflow-hidden bg-white dark:bg-[#141414] transition-colors duration-300 py-16">
       <div className="flex animate-scroll-left">
         {[...testimonials, ...testimonials].map((t, i) => (
           <div
