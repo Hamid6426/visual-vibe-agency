@@ -21,7 +21,7 @@ export default function Hero() {
   }, [scrollY, rotateLogo]);
 
   return (
-    <div className="h-dvh pb-12 md:h-fit md:pb-24 relative flex flex-col justify-center items-center bg-[#FFFFFF] dark:bg-[#141414] transition-colors duration-300">
+    <div className="h-dvh pb-[12vh] md:h-fit md:pb-24 relative flex flex-col justify-center items-center bg-[#FFFFFF] dark:bg-[#141414] transition-colors duration-300">
       {/* Headings */}
       <h2 className="text-5xl font-semibold text-[#141414] dark:text-[#E1E1E1]">
         The loud voice

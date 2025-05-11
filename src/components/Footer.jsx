@@ -77,7 +77,7 @@ export default function Footer() {
 
       {/* Footer Notice */}
       <section className="text-lg font-semibold text-center px-3 text-[#141414] dark:text-[#E1E1E1] transition-colors duration-300">
-        Copyright © Visual Vibe Creations. All Rights Reserved.
+        Copyright © Visual Vibe Creations
       </section>
     </footer>
   );

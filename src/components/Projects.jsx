@@ -19,14 +19,14 @@ export default function Projects() {
   const isInView2 = useInView(ref2, { once: true, margin: "-100px" });
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-3 sm:px-12 py-8 lg:pb-24 transition-colors duration-300">
+    <main className="mx-auto w-full max-w-6xl px-3 sm:px-12 py-24 transition-colors duration-300">
       {/* Header */}
       <section className="flex flex-col items-center justify-center gap-6 w-full mb-12">
-        <h2 className="text-4xl sm:text-6xl font-medium text-gray-900 dark:text-[#E1E1E1]">
+        <div className="text-center text-5xl lg:text-6xl font-medium text-[#141414] dark:text-[#E1E1E1]">
           Projects
-        </h2>
-        <p className="text-center w-full lg:text-lg text-gray-600 dark:text-gray-400">
-          Check out some of our fantastic works and leverage our services for
+        </div>
+        <p className="text-center w-full text-[#1B1B1B] dark:text-[#E1E1E1]">
+          F Check out some of our fantastic works and leverage our services for
           your brand
         </p>
       </section>
