@@ -28,7 +28,7 @@ export default function ContactForm() {
     <main className="bg-white dark:bg-[#141414]">
       <form
         onSubmit={handleSubmit}
-        className="max-w-lg md:my-12 mx-auto sm:border border-gray-300 dark:border-gray-600 p-6 space-y-4 bg-white dark:bg-[#141414] rounded-2xl sm:shadow-lg"
+        className="max-w-lg mb-6 sm:my-12 mx-auto sm:border border-gray-300 dark:border-gray-600 p-6 space-y-4 bg-white dark:bg-[#141414] rounded-2xl sm:shadow-lg"
       >
         <h3 className="text-2xl mb-2 text-center font-semibold text-[#141414] dark:text-[#E1E1E1]">
           Get in Touch
@@ -104,7 +104,7 @@ export default function ContactForm() {
           type="submit"
           disabled={submitting}
           className={`
-          w-full py-3 rounded-lg cursor-pointer text-black dark:text-white font-semibold border border-gray-300 dark:border-gray-600 
+          w-full py-3 rounded-full cursor-pointer text-black dark:text-white font-semibold border border-gray-300 dark:border-gray-600 
           ${
             submitting
               ? "bg-gray-400 cursor-not-allowed"
