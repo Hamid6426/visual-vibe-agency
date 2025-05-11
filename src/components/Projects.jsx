@@ -22,7 +22,7 @@ export default function Projects() {
     <main className="mx-auto w-full max-w-6xl px-3 sm:px-12 flex justify-center items-center flex-col transition-colors duration-300">
       {/* Header */}
       <section className="flex flex-col items-center justify-center gap-6 w-full">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-[#E1E1E1]">
+        <h2 className="text-4xl md:text-5xl font-medium text-[#141414] dark:text-[#E1E1E1]">
           Projects
         </h2>
         <p className="text-center w-full lg:text-lg text-gray-600 dark:text-gray-400">

@@ -186,11 +186,11 @@ export default function Services() {
     <main className="mx-auto w-full max-w-6xl px-3 lg:px-0 h-screen flex items-center justify-center flex-col bg-[#FFFFFF] dark:bg-[#141414] transition-colors duration-300">
       <div className="flex flex-col lg:flex-row justify-center gap-6 md:gap-6 lg:gap-12 px-4">
         {/* Text Section */}
-        <section className="flex flex-col items-center lg:w-5/12 gap-6 lg:gap-6 w-full">
-          <div className=" text-center text-4xl md:text-5xl lg:text-6xl font-bold text-[#141414] dark:text-[#E1E1E1]">
+        <section className="flex flex-col items-center lg:w-5/12 gap-6 lg:gap-6 w-full mb-4">
+          <div className=" text-center text-4xl md:text-5xl lg:text-6xl font-medium text-[#141414] dark:text-[#E1E1E1]">
             Services
           </div>
-          <div className="text-center text-base w-full text-[#1B1B1B] dark:text-[#E1E1E1]">
+          <div className="text-center text-base w-full  text-[#1B1B1B] dark:text-[#E1E1E1]">
             Can't find the answer you're looking for? Ask your questions and get
             an answer within 24 hours
           </div>
